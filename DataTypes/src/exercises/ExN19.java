@@ -1,0 +1,56 @@
+package exercises;
+
+import java.util.Scanner;
+
+public class ExN19 {
+	
+	public static class Student {
+		String name = "";
+		String surname = "";
+		int math = 0;
+		int physics = 0;
+		int informatics = 0;
+		double middle = 0;
+	}
+		
+	// --------main ;)
+	public static void ExN19 () {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Задание 19");
+		System.out.println("Введите количество студентов");
+		int n = scanner.nextInt();	
+		scanner.nextLine();
+		
+		Student[] students = new Student[n];
+		Student[] studentsBest = new Student[n];
+		
+		for (int i = 0;i < n; i++) {
+			System.out.println("Введите студента (имя фамилия матем физик информат)");
+			students[i] = new Student();
+			String str = scanner.nextLine();
+			String[] curData = str.split(" ");
+			students[i].name = curData[0];
+			students[i].surname = curData[1];
+			students[i].math = Integer.parseInt(curData[2]);
+			students[i].physics = Integer.parseInt(curData[3]);
+			students[i].informatics = Integer.parseInt(curData[4]);
+			students[i].middle = (double)(students[i].math + students[i].physics + students[i].informatics) / 3;
+			
+		}
+		for(int i = 0; i < n;i++) {
+			for(int j = i; j<n;j++) {
+				if (students[i].middle < students[j].middle) {
+					Student temp = students[i];
+					students[i] = students[j];
+					students[j] = temp;
+				}
+			}
+		}
+		for(int i = 0;i<n;i++) {
+			System.out.println(students[i].name + " " + students[i].surname + " " + students[i].middle);
+		}
+		
+		scanner.close();
+	}
+}
