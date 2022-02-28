@@ -27,6 +27,20 @@ public class DataTypes {
 		break;
 		case 19:ExN19.ExN19();
 		break;
+		case 21:ExN21.ExN21();
+		break;
+		case 22:ExN22.ExN22();
+		break;
+		case 23:ExN23.ExN23();
+		break;
+		case 24:ExN24.ExN24();
+		break;
+		case 25:ExN25.ExN25();
+		break;
+		case 26:ExN26.ExN26();
+		break;
+		case 27:ExN27.ExN27();
+		break;
 		
 		
 		
